@@ -1,0 +1,30 @@
+<html>
+<head>
+	  <title>Desain Form Pendaftaran</title>
+	  <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+	<form name="myForm" post="submit_page.php">
+	  <div id="login-box"> 
+	      <div class="left-box">
+			  <h1> Daftar </h1>
+			  <input type="text" name="username" id="username" placeholder="Nama Lengkap"/>
+		      <input type="text" name="email" placeholder="Email"/>
+		      <input type="password" name="password" placeholder="Password"/>
+		      <input type="password" name="password" placeholder="Re Password"/>
+		      <input type="submit" name="signup-button" value="Daftar" onsubmit="proses()">
+		  </div>
+		
+	      <div class="right-box">
+			  <!-- Hanya tampilan daftar web, tidak akan masuk ke database web kita -->
+		      <span class="signinwith"> Masuk Menggunakan<br/>Media Sosial</span>
+			       <button class="social facebook" onclick="fb()" target="_blank"><a href="https://web.facebook.com/"> Masuk menggunakan Facebook </a></button>
+			       <button class="social twitter"  onclick="tw()" target="_blank"><a href="https://twitter.com/signup"> Masuk menggunakan Twitter </a></button>
+		           <button class="social google"   onclick="gg()" target="_blank"><a href="https://accounts.google.com/signup"> Masuk menggunakan Google+ </a></button>
+	      </div>
+		  <div class="or"> Atau </div>
+      </div>
+    </form>
+    	
+</body>
+</html>

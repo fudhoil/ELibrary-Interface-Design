@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="header">
+<head>
+		<title> </title>
+		<link rel="stylesheet" href="../css/header.css">
+</head>
+<body class id="body">
+	<div class="body-header">
+		<script>
+			function doDate(){
+				var str = "";
+				var waktu = new Date();
+				var jam = waktu.getHours();
+				var menit = waktu.getMinutes();
+				var detik = waktu.getSeconds();
+				
+				if (jam <= 11){
+					var pesan = "Pagi";
+				}
+				else if (jam <=14){
+					var pesan = "Siang";
+				}
+				else if (jam <=17){
+					var pesan = "Sore";
+				}
+				else if (jam <=23){
+					var pesan = "Malam";
+				}
+				str += "Selamat "+pesan+", Waktu Menunjukkan Pukul "+jam+" : "+menit+" : "+detik;
+				document.getElementById("todaysDate").innerHTML = str;
+				
+			}
+			setInterval(doDate, 1000);
+		</script>
+		<div class="header-display"><a href="output.html" target="output">E-Library</a></div>
+		<div id="todaysDate">waktu</div>
+		<br>
+		<div class="header-menu">
+			<div class="display-kiri">
+				<a id="beranda" href="output.html" target="output">Beranda</a>
+				<a id="list-buku" href="list-buku.html" target="output"> List Buku</a>
+				<a id="tentang-kami" href="tentang-kami.html" target="output"> Tentang Kami</a>
+				<a id="bantuan" href="help.html" target="output"> Help</a>
+			</div>
+			<div class="display-kanan">
+					<a href="https://facebook.com" target="_blank"><img src="../img/facebook.png"></a>
+					<a href="https://instagram.com" target="_blank"><img src="../img/instagram.png"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

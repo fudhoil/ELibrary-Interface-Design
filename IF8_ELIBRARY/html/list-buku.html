@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Buku</title>
+	<link rel="stylesheet" href="../css/list-buku.css">
+</head>
+<body>	
+	<div class="parallax">
+		<span class="border">HOT OFFERS</span>
+		
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 3</div>
+			  <img src="../html/images/img-1.jpg" style="width:100%">
+				  <!-- <div class="text"><b>FIRST EDITION</b></div> -->
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 3</div>
+			  <img src="../html/images/img-2.jpg" style="width:100%">
+				  <!-- <div class="text"><b>SECOND EDITION</b></div> -->
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 3</div>
+			  <img src="../html/images/img-3.jpg" style="width:100%">
+				  <!-- <div class="text"><b>THIRD EDITION</b></div> -->  
+			</div>
+			<br>
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+		</div>
+	</div>
+	<!-- </div> -->
+		<script>
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+						  var i;
+						  var slides = document.getElementsByClassName("mySlides");
+						  var dots = document.getElementsByClassName("dot");
+						  for (i = 0; i < slides.length; i++) {
+						    slides[i].style.display = "none";  
+						  }
+						  slideIndex++;
+						  if (slideIndex > slides.length) {slideIndex = 1}    
+						  for (i = 0; i < dots.length; i++) {
+						    dots[i].className = dots[i].className.replace(" active", "");
+						  }
+						  slides[slideIndex-1].style.display = "block";  
+						  dots[slideIndex-1].className += " active";
+						  setTimeout(showSlides, 2000); // Change image every 2 seconds
+						  }
+		</script>
+	<div class="form">
+			<form name="form">
+			<table class="table-form" cellpadding="50" border="1" bordercolor="black"><tr><td><font size="9"><b>Data Pembelian Buku</b></font><table >
+		
+			<tr><td colspan="2" align="center" ><h1>Form Input</h1></td></tr>
+			<tr>
+			<td>Judul Buku </td><td> <select name="Judul Buku" id="iJudulBuku" onFocus="sorot(this)" onBlur="hilang(this)">
+								<option value="Buku Algoritma" id="BA">Buku Algoritma</option>
+								<option value="Buku JavaScript" id="BJ">Buku JavaScript</option>
+								<option value="Buku Basis Data" id="BD">Buku Basis Data</option>
+								<option value="Buku Kalkulus" id="BK">Buku Kalkulus</option>
+								
+						  </select></td></tr>
+			<tr>						
+			<td>Jumlah Beli </td><td> <input type="text" id="iJumlahBeli" size="25" onFocus="sorot(this)" onBlur="hilang(this)"></td></tr>
+			<tr>
+			<td>Member </td><td><input type="checkbox" id="iStatusMember" onFocus="sorot(this)" onBlur="hilang(this)">	</td></tr>
+			<tr>
+				<td colspan="2"><input type="button" Value="Hitung" onclick="hitung()">
+				 <input type=reset value=Hapus></td></tr>
+		<tr><td colspan="2" align="center" ><h1>Form Output</h1></td></tr>
+			<tr>
+			<td>Judul Buku </td><td> <input type="text" id="oJudulBuku" size="25"></td></tr>
+			<tr>
+			<td>Harga Buku </td><td> <input type="text" id="oHargaBuku" size="25"></td></tr>
+			<tr>
+			<td>Jumlah </td><td><input type="text" id="oJumlahBeli" size="25"></td></tr>
+			<tr>
+			<td>Subtotal </td><td> <input type="text" id="oSubtotal" size="25"></td></tr>
+			<tr>
+			<td>Diskon </td><td><input type="text" id="oDiskon" size="25"></td></tr>
+			<tr>						
+			<td>Total Bayar </td><td> <input type="text" id="oTotalBayar" size="25"></td></tr>
+			
+		</form>
+		<script languange="javascript">
+			function sorot(x){
+				x.style.background = "yellow";
+			}
+			function hilang(y){
+				y.style.background = "white";
+			}
+			function hitung(){
+				var JudulBuku,jumlahBeli,member,harga,diskon,subtotal,total;
+				 
+						if  (document.getElementById('BA').selected==true)
+						{
+							harga=100000;
+							JudulBuku='Buku Algoritma'
+						}
+						else
+						if  (document.getElementById('BJ').selected==true)
+						{
+						harga=80000;
+						JudulBuku='Buku Javascript';
+						}
+						else
+						if  (document.getElementById('BD').selected==true)
+						{
+						harga=135000;
+						JudulBuku='Buku Basis Data'
+						}
+						else
+						if  (document.getElementById('BK').selected==true)
+						{
+						harga=65000;
+						JudulBuku='Buku Kalkulus';
+						}
+
+				 jumlahBeli = document.getElementById("iJumlahBeli").value;
+
+				subtotal = harga*jumlahBeli;
+				
+				diskon
+				if (document.getElementById('iStatusMember').checked == true)
+				{
+				diskon=subtotal*10/100;
+				}
+				else	
+				{
+				diskon=subtotal*0;
+				}
+					
+				total = subtotal - diskon;
+				
+				document.getElementById("oJudulBuku").value = JudulBuku;
+				document.getElementById("oHargaBuku").value = harga;
+				document.getElementById("oJumlahBeli").value = jumlahBeli;
+				document.getElementById("oSubtotal").value = subtotal;
+				document.getElementById("oDiskon").value = diskon;
+				document.getElementById("oTotalBayar").value = total;
+			}
+		</script>
+		</table></table>
+	</div>		
+</body>
+</html>

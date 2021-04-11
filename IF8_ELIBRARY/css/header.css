@@ -1,0 +1,68 @@
+body {
+	margin: 0;
+	background-color: #531608;
+}
+.header-display {
+	background-color: #531608;
+	text-align: center;
+	position: sticky;
+	font-family: bebes neue;
+	padding: 6px 0px 5px;
+}
+.header-display a{
+	vertical-align: middle;	
+	color: white;
+	text-decoration: none;
+	font-size: 45px;
+	text-shadow: 0 8px 8px #0005;
+}
+#todaysDate {
+	color: white;
+	font-family: verdana;
+	text-align: center;
+}
+.header-menu {
+	min-height: 40px;
+	max-height: 40px;
+	font-family: verdana;
+	text-shadow: 0 8px 8px #0005;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	font-size: 10px;
+	overflow: hidden;
+	background-color: #7e685a;
+}
+.display-kiri a{
+	float: left;
+	display: block;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	padding: 14px 16px 20px;
+	text-decoration: none;	
+}
+.display-kiri a:hover {
+	background-color: #c2cad0;
+	color: white;
+}
+.display-kiri a:active {
+    position: relative;
+    top: 1px;
+}
+.display-kiri a:focus {
+    background-color: #c2b9b0;
+	color: #0b0c10;
+	font-weight: 750;
+	font-size: 10px;
+	box-shadow: inset 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.display-kanan a {
+	float: right;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 8px 20px;
+	text-decoration: none;
+}
+.display-kanan a {
+	display: inline-block;
+}
